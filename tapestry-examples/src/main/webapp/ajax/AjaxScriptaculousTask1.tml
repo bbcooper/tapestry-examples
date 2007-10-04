@@ -1,0 +1,25 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>AjaxScriptaculousTask1</title>
+		<script type="text/javascript" src="${prototype}"></script>
+		<script type="text/javascript" src="${scriptaculous}"></script>
+	</head>
+	<body>
+		<h1>AjaxScriptaculousTask1</h1>
+		
+		<button onclick="asyncCall();">Do AJAX Call</button>
+		
+		<script type="text/javascript">
+
+			function handleResponse (xhrResponse) { 
+				alert (xhrResponse.responseText); 
+			}
+
+			function asyncCall () { 
+				new Ajax.Request ('${theLink}', 
+					{asynchronous:true,	onSuccess:handleResponse}); 
+			}
+		</script>
+
+	</body>
+</html>

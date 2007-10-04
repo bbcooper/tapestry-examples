@@ -1,0 +1,18 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>Tapestry Examples</title>
+	</head>
+	<body>
+		<h1>Tapestry Examples</h1>
+		<t:layout>
+			<p>
+				This is the start page for this application, a good place to start your
+				modifications. Just to prove this is live:
+			</p>
+			<p>The current time is: ${currentTime}.</p>
+			<p>[<t:pagelink t:page="Start">refresh</t:pagelink>]</p>
+			<p>[<t:pagelink t:page="ajax/BasicTask1">Ajax Basic</t:pagelink>]</p>
+			<p>[<t:pagelink t:page="ajax/ScriptaculousTask1">Ajax Scriptaculous</t:pagelink>]</p>
+		</t:layout>
+	</body>
+</html>
