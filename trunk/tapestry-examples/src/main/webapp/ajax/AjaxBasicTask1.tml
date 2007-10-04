@@ -1,0 +1,35 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>AjaxBasicTask1</title>
+	</head>
+	<body>
+		<h1>AjaxBasicTask1</h1>
+		
+		<button onclick="asyncCall();">Do AJAX Call</button>
+		
+		<script>
+			var req;
+
+			function asyncCall() {			   
+			   if (typeof XMLHttpRequest != "undefined") {
+			       req = new XMLHttpRequest();
+			   } else if (window.ActiveXObject) {
+			       req = new ActiveXObject("Microsoft.XMLHTTP");
+			   }
+			   req.open("GET", "${theLink}", true);
+			   req.onreadystatechange = handleResponse;
+			   req.send(null);
+			}
+			
+			function handleResponse() {
+			    if (req.readyState == 4) {
+			        if (req.status == 200) {
+			        	var message = req.responseText; 						
+			            alert(message);
+			        }
+			    }
+			}						
+		</script>						
+		
+	</body>
+</html>

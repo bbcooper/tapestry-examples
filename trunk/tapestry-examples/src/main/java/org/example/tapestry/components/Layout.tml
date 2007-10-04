@@ -1,0 +1,10 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <head>
+        <title>My Tapestry Application</title>
+    </head>
+    <body>
+    	<p>header</p>
+        <t:body/>
+        <p>footer</p>
+    </body>
+</html>
