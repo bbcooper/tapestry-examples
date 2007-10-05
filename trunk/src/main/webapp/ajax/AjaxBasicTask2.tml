@@ -4,16 +4,16 @@
 	</head>
 	<body>
 		<h1>AjaxBasicTask2</h1>
-		<t:layout>
+		
 			<input type="text" id="userid" name="id" onkeyup="validate();"/>	
-			<div id="userIdMessage"></div>		
-		</t:layout>
+			<div id="userIdMessage">status</div>		
+		
 		<script>
 			var req;
 
 			function validate() {
 			   var idField = document.getElementById("userid");
-			   var url = "ajaxbasic/" + encodeURIComponent(idField.value);
+			   var url = "${theLink}/" + encodeURIComponent(idField.value);
 			   if (typeof XMLHttpRequest != "undefined") {
 			       req = new XMLHttpRequest();
 			   } else if (window.ActiveXObject) {
@@ -25,16 +25,17 @@
 			}
 			
 			function callback() {
-			    if (req.readyState == 4) {
-			        if (req.status == 200) {
-			            // update the HTML DOM based on whether or not message is valid
-			            parseMessage();
-			        }
-			    }
+		    	if(req.readyState == 4)
+				{
+		    		if(req.status == 200) {
+		    			response = req.responseXML;
+		    			parseMessage(response)
+		    		}
+				}												  
 			}
 			
-			function parseMessage() {
- 				var message = req.responseXML.getElementsByTagName("message")[0];
+			function parseMessage(response) {
+ 				var message = response.getElementsByTagName("message")[0]; 				
  				setMessage(message.childNodes[0].nodeValue);
 			}
 			
