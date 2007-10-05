@@ -6,50 +6,50 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tapestry.ComponentResources;
+import org.apache.tapestry.Link;
+import org.apache.tapestry.StreamResponse;
 import org.apache.tapestry.annotations.Inject;
 import org.apache.tapestry.services.RequestGlobals;
+import org.apache.tapestry.util.TextStreamResponse;
 
 public class AjaxBasicTask2 {
-	private HttpServletRequest request;
-	private HttpServletResponse response;
-
-	@Inject
-	private RequestGlobals _requestGlobals;
-
+	
 	private HashMap<String, String> users = new HashMap<String, String>();
 
 	void pageLoaded() {
 		System.out.println("AjaxTests PageLoaded");
-		users.put("greg", "account data");
-		users.put("duke", "account data");
+		users.put("greg", "account 1");
+		users.put("duke", "account 2");
+	}	
+	
+	@Inject
+	private ComponentResources _resources;
+	
+	/**
+	 * Generates a URI to the server-side function for the XHR to use.
+	 * 
+	 * @return the link
+	 */
+	public String getTheLink() {
+		Link l = _resources.createActionLink("myAction", false);
+		return l.toURI();
 	}
 
-	void pageAtached() {
-		System.out.println("AjaxBasic PageAtached");
-	}
-
-	void pageDetached() {
-		System.out.println("AjaxBasic PageAtached");
-		//users.clear();
-	}
-
-	void onActivate(String id) throws IOException {
-		request = _requestGlobals.getHTTPServletRequest();
-		response = _requestGlobals.getHTTPServletResponse();
-		System.out.println("AjaxBasic onActivate");
-		System.out.println("id: " + id);
+	/**
+	 * This is a server-side method called via XHR that returns some text.
+	 * 
+	 * @return some text
+	 */
+	StreamResponse onMyAction(String id) {
+		String message;
 		if ((id != null) && users.containsKey(id.trim())) {
-			response.setContentType("text/xml");
-			response.setHeader("Cache-Control", "no-cache");
-			response.getWriter().write("<message>valid</message>");
+			message = "<message>valid</message>";
 		} else {
-			response.setContentType("text/xml");
-			response.setHeader("Cache-Control", "no-cache");
-			response.getWriter().write("<message>invalid</message>");
+			message = "<message>invalid</message>";
 		}
+		return new TextStreamResponse("type/xml", message);
 	}
+	
 
-	void onPassivate() {
-		System.out.println("AjaxBasic onPassivate");
-	}
 }
