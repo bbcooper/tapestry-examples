@@ -8,7 +8,7 @@ import org.apache.tapestry.annotations.Inject;
 import org.apache.tapestry.annotations.Path;
 import org.apache.tapestry.util.TextStreamResponse;
 
-public class AjaxScriptaculousTask1 {
+public class AjaxPrototypeTask1 {
 	@Inject
 	private ComponentResources _resources;
 
