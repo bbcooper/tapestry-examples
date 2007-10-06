@@ -13,7 +13,7 @@
 			<p>[<t:pagelink t:page="Start">refresh</t:pagelink>]</p>
 			<p>[<t:pagelink t:page="ajax/BasicTask1">Ajax Basic Task 1</t:pagelink>]</p>
 			<p>[<t:pagelink t:page="ajax/BasicTask2">Ajax Basic Task 2</t:pagelink>]</p>
-			<p>[<t:pagelink t:page="ajax/ScriptaculousTask1">Ajax Scriptaculous</t:pagelink>]</p>
+			<p>[<t:pagelink t:page="ajax/PrototypeTask1">Ajax Prototype</t:pagelink>]</p>
 		</t:layout>
 	</body>
 </html>
