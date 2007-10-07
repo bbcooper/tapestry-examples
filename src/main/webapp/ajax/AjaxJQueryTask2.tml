@@ -1,0 +1,53 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>AjaxJQueryTask2</title>
+		<script type="text/javascript" src="${jquery}"></script>
+	</head>
+	<body>
+		<h1>AjaxJQueryTask2</h1>
+		
+			<input type="text" id="userid" name="id" onkeyup="validate();"/>	
+			<div id="userIdMessage">status</div>		
+		
+		<script>
+			function validate() {
+				var idField = document.getElementById("userid");
+			   	var url = "${theLink}/" + encodeURIComponent(idField.value);
+			   	
+			   	$.ajax({
+					url: url,
+					success: function(response){
+						parseMessage(response);
+					},
+					error: function(){ alert('Something went wrong...') }
+				});
+				
+			}
+			
+			function parseMessage(response) {
+ 				var message = response.getElementsByTagName("message")[0]; 				
+ 				setMessage(message.childNodes[0].nodeValue);
+			}
+			
+			function setMessage(message) {
+			     var userMessageElement = document.getElementById("userIdMessage");
+			     var messageText;
+			     if (message == "invalid") {
+			         userMessageElement.style.color = "red";
+			         messageText = "Invalid User Id";
+			     } else {
+			         userMessageElement.style.color = "green";
+			         messageText = "Valid User Id";
+			     }
+			     var messageBody = document.createTextNode(messageText);
+			     // if the messageBody element has been created simple replace it otherwise
+			     // append the new element
+			     if (userMessageElement.childNodes[0]) {
+			         userMessageElement.replaceChild(messageBody,  userMessageElement.childNodes[0]);
+			     } else {
+			         userMessageElement.appendChild(messageBody);
+			     }
+			}
+		</script>		
+	</body>
+</html>
