@@ -2,7 +2,6 @@
 	<head>
 		<title>AjaxPrototypeTask2</title>
 		<script type="text/javascript" src="${prototype}"></script>
-		<script type="text/javascript" src="${scriptaculous}"></script>
 	</head>
 	<body>
 		<h1>AjaxPrototypeTask2</h1>
@@ -11,29 +10,19 @@
 			<div id="userIdMessage">status</div>		
 		
 		<script>
-			var req;
-
 			function validate() {
-			   var idField = document.getElementById("userid");
-			   var url = "${theLink}/" + encodeURIComponent(idField.value);
-			   if (typeof XMLHttpRequest != "undefined") {
-			       req = new XMLHttpRequest();
-			   } else if (window.ActiveXObject) {
-			       req = new ActiveXObject("Microsoft.XMLHTTP");
-			   }
-			   req.open("GET", url, true);
-			   req.onreadystatechange = callback;
-			   req.send(null);
-			}
-			
-			function callback() {
-		    	if(req.readyState == 4)
-				{
-		    		if(req.status == 200) {
-		    			response = req.responseXML;
-		    			parseMessage(response)
-		    		}
-				}												  
+			   	var idField = document.getElementById("userid");
+			   	var url = "${theLink}/" + encodeURIComponent(idField.value);
+			   
+				new Ajax.Request(url,
+					{
+						method:'get',
+						onSuccess: function(transport){
+							var response = transport.responseXML;
+							parseMessage(response);
+						},
+						onFailure: function(){ alert('Something went wrong...') }
+					});
 			}
 			
 			function parseMessage(response) {
