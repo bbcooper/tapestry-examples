@@ -16,9 +16,9 @@ public class AjaxPrototypeTask1 {
 	@Path("${tapestry.scriptaculous}/prototype.js")
 	private Asset _prototype;
 
-	@Inject
-	@Path("${tapestry.scriptaculous}/scriptaculous.js")
-	private Asset _scriptaculous;
+//	@Inject
+//	@Path("${tapestry.scriptaculous}/scriptaculous.js")
+//	private Asset _scriptaculous;
 
 	/**
 	 * Generates a URI to the server-side function for the XHR to use.
@@ -58,15 +58,15 @@ public class AjaxPrototypeTask1 {
 	/**
 	 * @return the scriptaculous
 	 */
-	public Asset getScriptaculous() {
-		return _scriptaculous;
-	}
+//	public Asset getScriptaculous() {
+//		return _scriptaculous;
+//	}
 
 	/**
 	 * @param scriptaculous
 	 *            the scriptaculous to set
 	 */
-	public void setScriptaculous(Asset scriptaculous) {
-		_scriptaculous = scriptaculous;
-	}
+//	public void setScriptaculous(Asset scriptaculous) {
+//		_scriptaculous = scriptaculous;
+//	}
 }
