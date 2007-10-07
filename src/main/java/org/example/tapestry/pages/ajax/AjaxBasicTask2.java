@@ -1,16 +1,11 @@
 package org.example.tapestry.pages.ajax;
 
-import java.io.IOException;
 import java.util.HashMap;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tapestry.ComponentResources;
 import org.apache.tapestry.Link;
 import org.apache.tapestry.StreamResponse;
 import org.apache.tapestry.annotations.Inject;
-import org.apache.tapestry.services.RequestGlobals;
 import org.apache.tapestry.util.TextStreamResponse;
 
 public class AjaxBasicTask2 {
@@ -50,6 +45,4 @@ public class AjaxBasicTask2 {
 		}
 		return new TextStreamResponse("type/xml", message);
 	}
-	
-
 }
