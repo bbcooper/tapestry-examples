@@ -1,0 +1,27 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>AjaxJQueryTask1</title>
+		<script type="text/javascript" src="${jquery}"></script>
+	</head>
+	<body>
+		<h1>AjaxJQueryTask1</h1>
+		
+		<button onclick="asyncCall();">Do AJAX Call</button>
+		
+		<script>
+			function handleResponse(txt) { 
+				alert(txt); 
+			}
+
+			function asyncCall () { 
+				$.ajax({
+					url: "${theLink}",
+					success: function(msg){
+						handleResponse(msg);
+					}
+				});
+			}
+		</script>						
+		
+	</body>
+</html>
