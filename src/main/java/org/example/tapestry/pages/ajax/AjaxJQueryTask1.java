@@ -37,15 +37,15 @@ public class AjaxJQueryTask1 {
 	}
 
 	/**
-	 * @return the prototype
+	 * @return the jquery
 	 */
 	public Asset getJquery() {
 		return _jquery;
 	}
 
 	/**
-	 * @param prototype
-	 *            the prototype to set
+	 * @param jquery
+	 *            the jquery to set
 	 */
 	public void setJquery(Asset jquery) {
 		_jquery = jquery;
