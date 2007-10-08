@@ -1,0 +1,27 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>JQuery UI Dialog Example</title>
+		<link rel="stylesheet" href="assets/css/flora/flora.all.css" type="text/css"
+			media="screen" title="Flora (Default)" />
+		<script type="text/javascript" src="assets/jquery-1.2.1.js"></script>
+		<script type="text/javascript" src="assets/jquery.ui-SNAPSHOT/jquery.dimensions.js"></script>
+		<script type="text/javascript" src="assets/jquery.ui-SNAPSHOT/ui.dialog.js"></script>
+		<script type="text/javascript" src="assets/jquery.ui-SNAPSHOT/ui.resizable.js"></script>
+		<script type="text/javascript" src="assets/jquery.ui-SNAPSHOT/ui.mouse.js"></script>
+		<script type="text/javascript" src="assets/jquery.ui-SNAPSHOT/ui.draggable.js"></script>
+		<script>
+			$(document).ready(function(){ $("#example").dialog({ 
+				resizable:false,
+				draggable:false,
+				position:'center',
+				width:300,
+				height:200,
+				title:'TITLE' 
+			}); });
+		</script>
+	</head>
+	<body>
+		<h1>JQuery UI Dialog Example</h1>
+		<div id="example" class="flora" title="This is my title">I'm in a dialog!</div>
+	</body>
+</html>

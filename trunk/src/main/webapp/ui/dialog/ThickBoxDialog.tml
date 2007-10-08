@@ -1,0 +1,16 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>Dialog ThickBox</title>
+		<script type="text/javascript" src="${jquery}"></script>
+		<script type="text/javascript" src="${thickbox}"></script>
+		<link rel="stylesheet" href="${thickboxcss}" type="text/css" media="screen" />
+	</head>
+	<body>
+		<h1>Dialog ThickBox</h1>
+		<p>Click on a image to open a dialog</p>
+		<a href="/tapestry-examples/assets/thickbox/Bulldog2.jpg" title="grrrrroovy"
+			class="thickbox">
+			<img src="/tapestry-examples/assets/thickbox/Bulldog1.jpg" alt="Single Image" />
+		</a>
+	</body>
+</html>
