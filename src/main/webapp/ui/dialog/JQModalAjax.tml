@@ -1,0 +1,23 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>jqModalAjax</title>
+		<script type="text/javascript" src="${jquery}"></script>
+		<script type="text/javascript" src="${jqmodal}"></script>
+		<link rel="stylesheet" href="${jqmodalCSS}" type="text/css" media="screen" />
+	</head>
+	<body>
+		<h1>jqModalAjax</h1>
+		<script>
+		
+			$().ready(function() {
+			  $('#ex2').jqm({ajax: '${thelink}', trigger: 'a.ex2trigger'});
+			});
+		
+		</script>
+		<a href="#" class="ex2trigger">open</a>
+
+		<div class="jqmWindow" id="ex2">
+			Please wait... <!-- <img src="inc/busy.gif" alt="loading" /> -->
+		</div>
+	</body>
+</html>
