@@ -10,7 +10,8 @@
 		<script>
 		
 			$().ready(function() {
-			  $('#ex2').jqm({ajax: '${thelink}', trigger: 'a.ex2trigger'});
+			  //$('#ex2').jqm({ajax: '${thelink}', trigger: 'a.ex2trigger'});
+              $('#ex2').jqm({ajax: '${thelink}'}).jqmShow();
 			});
 		
 		</script>
