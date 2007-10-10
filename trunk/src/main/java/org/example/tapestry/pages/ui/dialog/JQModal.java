@@ -23,24 +23,12 @@ public class JQModal {
 		return _jquery;
 	}
 
-	public void setJquery(Asset jquery) {
-		_jquery = jquery;
-	}
-
 	public Asset getJqmodal() {
 		return jqmodal;
 	}
 
-	public void setJqmodal(Asset jqmodal) {
-		this.jqmodal = jqmodal;
-	}
-
 	public Asset getJqmodalCSS() {
 		return jqmodalCSS;
-	}
-
-	public void setJqmodalCSS(Asset jqmodalCSS) {
-		this.jqmodalCSS = jqmodalCSS;
 	}
 	
 	
