@@ -1,0 +1,160 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>jqModalWizard</title>
+		<script type="text/javascript" src="${jquery}"></script>
+		<script type="text/javascript" src="${jqmodal}"></script>
+		<link rel="stylesheet" href="${jqmodalcss}" type="text/css" media="screen" />
+	</head>
+	<body>
+		<h1>jqModalWizard</h1>
+
+		<script>
+			$().ready(function() { 
+				$('#dialog').jqm({
+					modal:true,
+					onShow: function(h) {
+						h.w.fadeIn(888);
+					}}).jqmShow().jqmAddClose('a.d2trigger').jqmAddClose('a.login');
+				$('#dialog2').jqm({
+					modal:true, 
+					trigger:'a.d2trigger',
+					onShow: function(h) {
+						h.w.fadeIn(888);
+					}}).jqmAddClose('a.d3trigger');
+				$('#dialog3').jqm({
+					modal:false, 
+					trigger:'a.d3trigger',
+					onShow: function(h) {
+						h.w.fadeIn(888);
+					},
+					onHide: function(h) {       					
+      					h.o.remove(); // remove overlay
+      					h.w.fadeOut(888); // hide window      
+    				}}).jqmAddClose('a.closeStep3'); 
+    			$('#login').jqm({
+					modal:true, 
+					trigger:'a.login',
+					onShow: function(h) {
+						h.w.fadeIn(888);
+					}});
+			});
+		</script>
+
+		<div class="jqmWindow" id="dialog">
+
+			<a href="#" class="jqmClose">Zapri</a>
+			<hr />
+			<table width="200" border="0">
+				<tr>
+					<td></td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td colspan="4">Ali želite prilagoditi izgled Avto-Moto portala?</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2">
+						<a href="#" class="d2trigger">PRILAGODI</a>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><a href="#" class="jqmClose">Ne želim</a></td>
+					<td></td>
+					<td></td>
+					<td><a href="#" class="login">Prijava</a></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="jqmWindow" id="dialog2">
+			<a href="#" class="jqmClose">Zapri</a>
+			<hr />
+			<table width="200" border="0">
+				<tr>
+					<td></td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td colspan="4">
+						Katero znamko avtomobila vozite?
+						<br />
+						(portal bo prilagojen tej znamki)
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2">
+						<form name="form1" method="post" action="">
+							<label>
+								<select name="select">
+									<option>izberite</option>
+									<option>Alfa Romeo</option>
+									<option>BMW</option>
+									<option>Citroen</option>
+									<option>Fiat</option>
+									<option>Opel</option>
+								</select>
+							</label>
+						</form>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><a href="#" class="jqmClose">Ne želim</a></td>
+					<td></td>
+					<td></td>
+					<td><a href="#" class="d3trigger">Naprej</a></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="jqmWindow" id="dialog3">
+			<a href="#" class="jqmClose">Zapri</a>
+			<hr />
+			<table width="200" border="0">
+				<tr>
+					<td></td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td colspan="4">Kje živite ?</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2">
+						<form id="form2" name="form2" method="post" action="">
+							
+								<input type="text" name="textfield" />
+							
+						</form>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><a href="#" class="jqmClose">Ne želim</a></td>
+					<td></td>
+					<td></td>
+					<td><a href="#" class="closeStep3">Končaj</a></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="jqmWindow" id="login">
+			<a href="#" class="back">Nazaj</a>
+			<p>Prijavite se prosim</p>
+			<form id="form3" name="form3" method="post" action="">
+				<input type="text" name="email" />
+				<input type="password" name="password" />
+				<button>prijava</button>
+			</form>
+		</div>
+	</body>
+</html>
