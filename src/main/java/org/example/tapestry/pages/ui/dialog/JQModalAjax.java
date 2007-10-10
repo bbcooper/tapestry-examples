@@ -26,8 +26,8 @@ public class JQModalAjax {
 	@Path("context:assets/jqModal/jqModal.css")
 	private Asset jqmodalCSS;
 
-	@Component
-	private WizardStep1 wizardStep1;
+//	@Component
+//	private WizardStep1 wizardStep1;
 	
 	/**
 	 * Generates a URI to the server-side function for the XHR to use.
@@ -45,11 +45,11 @@ public class JQModalAjax {
 	 * @return some text
 	 */
 	StreamResponse onMyAction() {
-//	    String htmlFragment = "<p>paragraph <b>bold</b></p>";
-//	    return new TextStreamResponse("text/html", htmlFragment);
+	    String htmlFragment = "<p>paragraph <b>bold</b></p>";
+	    return new TextStreamResponse("text/html", htmlFragment);
 	    
-	    wizardStep1.setMessage("hello");
-	    return (StreamResponse) wizardStep1;
+//	    wizardStep1.setMessage("hello");
+//	    return (StreamResponse) wizardStep1;
 	}
 
 	public Asset getJquery() {
