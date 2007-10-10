@@ -22,6 +22,7 @@
 			<p>[<t:pagelink t:page="ui/dialog/ThickBoxDialogOnLoad">ThickBox Dialog OnLoad</t:pagelink>]</p>
 			<p>[<t:pagelink t:page="ui/dialog/JQModal">jqModal Dialog</t:pagelink>]</p>
 			<p>[<t:pagelink t:page="ui/dialog/JQModalAjax">jqModal Dialog Ajax</t:pagelink>]</p>
+			<p>[<t:pagelink t:page="ui/dialog/JQModalWizard">jqModal Wizard</t:pagelink>]</p>
 		</t:layout>
 	</body>
 </html>
