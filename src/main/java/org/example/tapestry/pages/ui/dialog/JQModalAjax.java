@@ -4,9 +4,11 @@ import org.apache.tapestry.Asset;
 import org.apache.tapestry.ComponentResources;
 import org.apache.tapestry.Link;
 import org.apache.tapestry.StreamResponse;
+import org.apache.tapestry.annotations.Component;
 import org.apache.tapestry.annotations.Inject;
 import org.apache.tapestry.annotations.Path;
 import org.apache.tapestry.util.TextStreamResponse;
+import org.example.tapestry.components.ui.dialog.WizardStep1;
 
 public class JQModalAjax {
 	@Inject
@@ -24,6 +26,9 @@ public class JQModalAjax {
 	@Path("context:assets/jqModal/jqModal.css")
 	private Asset jqmodalCSS;
 
+	@Component
+	private WizardStep1 wizardStep1;
+	
 	/**
 	 * Generates a URI to the server-side function for the XHR to use.
 	 * 
@@ -40,8 +45,11 @@ public class JQModalAjax {
 	 * @return some text
 	 */
 	StreamResponse onMyAction() {
-		return new TextStreamResponse("text/html;charset=UTF-8",
-				"<p>paragraph <b>bold</b></p>");
+//	    String htmlFragment = "<p>paragraph <b>bold</b></p>";
+//	    return new TextStreamResponse("text/html", htmlFragment);
+	    
+	    wizardStep1.setMessage("hello");
+	    return (StreamResponse) wizardStep1;
 	}
 
 	public Asset getJquery() {
