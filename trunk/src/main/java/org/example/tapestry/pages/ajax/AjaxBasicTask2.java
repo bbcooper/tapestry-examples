@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.apache.tapestry.ComponentResources;
 import org.apache.tapestry.Link;
 import org.apache.tapestry.StreamResponse;
-import org.apache.tapestry.annotations.Inject;
+import org.apache.tapestry.ioc.annotations.Inject;
 import org.apache.tapestry.util.TextStreamResponse;
 
 public class AjaxBasicTask2 {
