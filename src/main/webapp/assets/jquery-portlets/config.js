@@ -8,6 +8,39 @@ $(document).ready(
 				return false;
 			}
 		);
+		
+		// Close Single Portlet
+		$('a.closeAction').click(function()
+			{
+				$(this).parent('div').parent('div').hide();
+				// should ask 'Are you sure?'
+				return false;
+			}
+		);
+		
+		// Edit mode
+		$("div.portlet_edit").hide();
+		$("a.editModeCloseAction").hide();
+		
+		$('a.editModeAction').click(function()
+			{
+				$(this).parent('div').next('div').hide();
+				$("div.portlet_edit").show();
+				$('a.editModeAction').hide();
+				$("a.editModeCloseAction").show();
+				return false;
+			}
+		);
+		
+		$('a.editModeCloseAction').click(function()
+			{
+				$(this).parent('div').next('div').show();
+				$("div.portlet_edit").hide();
+				$('a.editModeAction').show();
+				$("a.editModeCloseAction").hide();
+				return false;
+			}
+		); // Edit mode
 
 		// Invert All Portlets
 		$('a#all_invert').click(function()
