@@ -65,6 +65,11 @@
 		</plugins>
 	</build>
 	<repositories>
+        <repository>
+            <id>formos</id>
+            <name>Formos Repository</name>
+            <url>http://tapestry.formos.com/maven-snapshot-repository/</url>
+        </repository>
 		<repository>
 			<id>codehaus.snapshots</id>
 			<url>http://snapshots.repository.codehaus.org</url>
