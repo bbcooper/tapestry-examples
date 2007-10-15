@@ -26,20 +26,33 @@
                 <td>
     
                     <div class="portlet">
-                        <div class="portlet_topper">
-                            1. <a href="#" class="toggle">Toggle</a> <a href="#" class="toggleEdit">Edit</a>
-                        </div>
-                        <div class="portlet_content">
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam in leo. Nam tellus. Sed tincidunt. Nunc molestie diam sit amet orci. Ut semper. Curabitur cursus euismod turpis. Aenean quis elit ut nulla accumsan nonummy. Phasellus tristique purus quis nibh. Donec adipiscing laoreet nibh. In hac habitasse platea dictumst. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In ut justo. Nulla libero.</p>
-                        </div>
-                        <div>
-                            <p>Edit mode</p>
-                        </div>
-    
+                    	<div class="portlet_topper">
+                    		1.
+                    		<a href="#" class="toggle">Toggle</a>
+                    		<a href="#" class="editModeAction">Edit</a>
+                    		<a href="#" class="editModeCloseAction">Close Edit</a> 
+                    		<a href="#" class="closeAction">Close</a>
+                    	</div>
+                    	<div class="portlet_content">
+                    		<p>
+                    			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam in
+                    			leo. Nam tellus. Sed tincidunt. Nunc molestie diam sit amet orci. Ut
+                    			semper. Curabitur cursus euismod turpis. Aenean quis elit ut nulla
+                    			accumsan nonummy. Phasellus tristique purus quis nibh. Donec
+                    			adipiscing laoreet nibh. In hac habitasse platea dictumst. Aliquam
+                    			erat volutpat. Cum sociis natoque penatibus et magnis dis parturient
+                    			montes, nascetur ridiculus mus. In ut justo. Nulla libero.
+                    		</p>
+                    	</div>
+                    	<div class="portlet_edit">
+                    		<p>Edit mode</p>
+                    		
+                    	</div>
                     </div>
                     <div class="portlet">
                         <div class="portlet_topper">
-                            2. <a href="#" class="toggle">Toggle</a>
+                            2. <a href="#" class="toggle">Toggle</a> 
+                            <a href="#" class="closeAction">Close</a>
                         </div>
                         <div class="portlet_content">
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam in leo. Nam tellus. Sed tincidunt. Nunc molestie diam sit amet orci. Ut semper. Curabitur cursus euismod turpis. Aenean quis elit ut nulla accumsan nonummy. Phasellus tristique purus quis nibh. Donec adipiscing laoreet nibh. In hac habitasse platea dictumst. Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In ut justo. Nulla libero.</p>
