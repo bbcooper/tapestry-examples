@@ -2,7 +2,7 @@ package org.example.tapestry.pages;
 
 import java.util.Date;
 
-import org.apache.tapestry.annotations.Inject;
+import org.apache.tapestry.ioc.annotations.Inject;
 import org.apache.tapestry.services.Cookies;
 
 /**

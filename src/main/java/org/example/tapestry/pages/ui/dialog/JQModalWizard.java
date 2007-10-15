@@ -1,7 +1,7 @@
 package org.example.tapestry.pages.ui.dialog;
 
 import org.apache.tapestry.Asset;
-import org.apache.tapestry.annotations.Inject;
+import org.apache.tapestry.ioc.annotations.Inject;
 import org.apache.tapestry.annotations.Path;
 import org.apache.tapestry.annotations.Persist;
 
