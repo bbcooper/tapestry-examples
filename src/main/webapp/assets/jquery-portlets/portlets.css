@@ -145,3 +145,7 @@ body
 {
 	background: #bba;
 }
+
+input {
+	border: 1px solid;
+}
