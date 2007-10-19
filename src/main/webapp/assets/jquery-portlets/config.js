@@ -28,6 +28,11 @@ $(document).ready(
 				$("div.portlet_edit").show();
 				$('a.editModeAction').hide();
 				$("a.editModeCloseAction").show();
+				//$(":text").enable();
+				//$(':text').set('disabled', false);
+				//$('input').set('disabled', false);
+				//$(this).parent('div').next('div').next('div form input').set('disabled', false);
+				$("#firstname").css("disabled", "false");
 				return false;
 			}
 		);
@@ -38,6 +43,7 @@ $(document).ready(
 				$("div.portlet_edit").hide();
 				$('a.editModeAction').show();
 				$("a.editModeCloseAction").hide();
+				
 				return false;
 			}
 		); // Edit mode
