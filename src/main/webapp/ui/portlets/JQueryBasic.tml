@@ -5,8 +5,7 @@
         <script type="text/javascript" src="${jquery}"></script>
         <script type="text/javascript" src="${jqinterface}"></script>
         <script type="text/javascript" src="${jqconfig}"></script>
-        <link rel="stylesheet" href="${jqportletsCSS}" type="text/css" media="all" />
-
+        <link rel="stylesheet" href="${jqportletsCSS}" type="text/css" media="all"/>
     </head>
     <body>
     <div id="container">
@@ -46,7 +45,42 @@
                     	</div>
                     	<div class="portlet_edit">
                     		<p>Edit mode</p>
-                    		
+                            <form action="/tapestry-examples/ui/portlets/jquerybasic.form" id="form" method="post" name="form">
+                                <div class="t-invisible"><input name="t:formdata" type="hidden"
+value="H4sIAAAAAAAAAFvzloEVAN3OqfcEAAAA"/></div> 
+                                First name: 
+                                <input id="firstname" type="text" name="firstname"/>
+                                <br/>
+                                Last name: 
+                                <input type="text" name="lastname"/>
+                                <br/>
+                                <br/>
+                                <input type="radio" name="sex" value="male"/> Male
+                                <br/>
+                                <input type="radio" name="sex" value="female"/> Female
+                                <br/>
+                                <br/>
+                                I have a bike:
+                                <input type="checkbox" name="vehicle" value="Bike"/>
+                                <br />
+                                I have a car: 
+                                <input type="checkbox" name="vehicle" value="Car"/>
+                                <br />
+                                I have an airplane: 
+                                <input type="checkbox" name="vehicle" value="Airplane"/>
+                                <br/>
+                                <br/>
+                                Username: 
+                                <input type="text" name="user"/>
+                                <input type="submit" value="Submit"/>
+                                <br/>
+                                <br/>
+                                
+                            </form>
+                    		<!-- <t:form>
+                                <p>forma</p>
+	                            Show: <t:select t:id="newsAppearance" model="'Title only,Title and image,Everything'" value="prop:newsAppearance" /> 
+	                       </t:form>-->
                     	</div>
                     </div>
                     <div class="portlet">
