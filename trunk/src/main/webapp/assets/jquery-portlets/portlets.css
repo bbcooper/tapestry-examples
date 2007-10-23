@@ -130,6 +130,7 @@ body
 {
 	line-height: 150%;
 	text-align: justify;
+	font-size: 11px;
 }
 
 .portlet_bottom
@@ -140,6 +141,22 @@ body
 	overflow: hidden;
 	height: 5px;
 }
+
+.portlet_edit
+{
+	border-top: 1px solid #998;
+	padding: 10px;
+}
+.portlet_edit label
+{
+	line-height: 150%;
+	font-size: 11px;
+}
+.portlet_edit select
+{
+	font-size: 10px;
+}
+
 
 .sort_placeholder
 {
