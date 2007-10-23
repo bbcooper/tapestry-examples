@@ -25,6 +25,14 @@ public class JQueryBasic {
     @Inject
     @Path("context:assets/jquery-portlets/logo.gif")
     private Asset logo;
+    
+    @Inject
+    @Path("context:assets/jquery-portlets/news-bear.jpg")
+    private Asset newsBear;
+    
+    @Inject
+    @Path("context:assets/jquery-portlets/news-sport.jpg")
+    private Asset newsSport;
 
     public Asset getJquery() {
         return jquery;
@@ -56,4 +64,12 @@ public class JQueryBasic {
     public void setNewsAppearance(String newsAppearance) {
         this.newsAppearance = newsAppearance;
     }
+
+	public Asset getNewsBear() {
+		return newsBear;
+	}
+
+	public Asset getNewsSport() {
+		return newsSport;
+	}
 }
