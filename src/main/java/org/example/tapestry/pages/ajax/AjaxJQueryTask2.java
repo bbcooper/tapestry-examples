@@ -51,18 +51,8 @@ public class AjaxJQueryTask2 {
 		return new TextStreamResponse("type/xml", message);
 	}
 	
-	/**
-	 * @return the prototype
-	 */
 	public Asset getJQuery() {
 		return _jquery;
 	}
 
-	/**
-	 * @param jquery
-	 *            the prototype to set
-	 */
-	public void setJQuery(Asset jquery) {
-		_jquery = jquery;
-	}
 }
