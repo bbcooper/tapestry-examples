@@ -33,22 +33,50 @@
                     		<a href="#" class="closeAction">Close</a>
                     	</div>
                     	<div class="portlet_content">
-                    		<p>
-                    			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam in
-                    			leo. Nam tellus. Sed tincidunt. Nunc molestie diam sit amet orci. Ut
-                    			semper. Curabitur cursus euismod turpis. Aenean quis elit ut nulla
-                    			accumsan nonummy. Phasellus tristique purus quis nibh. Donec
-                    			adipiscing laoreet nibh. In hac habitasse platea dictumst. Aliquam
-                    			erat volutpat. Cum sociis natoque penatibus et magnis dis parturient
-                    			montes, nascetur ridiculus mus. In ut justo. Nulla libero.
-                    		</p>
+                    		<div style="float:left; margin-right:3px">
+                    			<a href="http://www.rtvslo.si/zabava/modload.php?&amp;c_mod=rnews&amp;op=sections&amp;func=read&amp;c_menu=1&amp;c_id=29199&amp;rss=1#1193164869">
+                    				<img src="${newsBear}"/>
+                    			</a>
+                    		</div>
+                    		<p><strong>Knut ni debel, ampak dobro grajen!</strong></p>
+                    		<p style="color:grey; font-size:8px">RTV - Zabava pred 1 uro in 11 minutami</p><br/>
+							<p>Se sprašujete, kako je kaj severni medvedek Knut, ki razveseljuje obiskovalce berlinskega živalskega vrta? "Fant" je dobro razvit in zdrav.</p>
+							
+                    		<div style="float:left; margin-right:3px">
+                    			<a href="http://www.delo.si/index.php?sv_path=41,33,247664">
+                    				<img src="${newsSport}"/>
+                    			</a>
+                    		</div>
+                    		<p><strong>Za Stuttgart in Lyon nocoj že zadnja priložnost </strong></p>
+                    		<p style="color:grey; font-size:8px">Delo - novice pred 1 uro in 7 minutami</p>
+							<p>Pričele so se tekme 3. kroga Lige prvakov v skupinah od E do H. Odigrana pa je že bila tekma v Rusiji, kjer je moskovski CSKA izgubil proti Interju iz Milana z 1:2.</p>
+							                    			
                     	</div>
                     	<div class="portlet_edit">
-                    		<p>Edit mode</p>
-                            <form action="/tapestry-examples/ui/portlets/jquerybasic.form" id="form" method="post" name="form">
+                    		<label for="news-appearance">Oblika izpisa</label>
+                    		<select id="news-appearance">
+                    			<option value="samo-slika">Samo slika</option>
+                    			<option value="naslov-slika">Naslov in slika</option>
+                    			<option value="vse" selected="selected">Prikaži vse</option>
+                    		</select><br/>
+                    		<label for="news-count">Št.novic</label>
+                    		<select id="news-count">
+                    			<option value="1">1</option>
+                    			<option value="2" selected="selected">2</option>
+                    			<option value="3">3</option>
+                    		</select><br/>
+                    		<label for="news-display">Odpri v</label>
+                    		<select id="news-display">
+                    			<option value="1" selected="selected">v novem oknu</option>
+                    			<option value="2">v novem oknu (znotraj)</option>
+                    			<option value="3">v tem oknu</option>
+                    		</select><br/>
+                    		
+<!--                            <form action="/tapestry-examples/ui/portlets/jquerybasic.form" id="form" method="post" name="form">
+
                                 <div class="t-invisible"><input name="t:formdata" type="hidden"
 value="H4sIAAAAAAAAAFvzloEVAN3OqfcEAAAA"/></div> 
-                                First name: 
+                                 First name: 
                                 <input id="firstname" type="text" name="firstname"/>
                                 <br/>
                                 Last name: 
@@ -74,9 +102,9 @@ value="H4sIAAAAAAAAAFvzloEVAN3OqfcEAAAA"/></div>
                                 <input type="text" name="user"/>
                                 <input type="submit" value="Submit"/>
                                 <br/>
-                                <br/>
+                                <br/> 
                                 
-                            </form>
+                            </form>-->
                     		<!-- <t:form>
                                 <p>forma</p>
 	                            Show: <t:select t:id="newsAppearance" model="'Title only,Title and image,Everything'" value="prop:newsAppearance" /> 
