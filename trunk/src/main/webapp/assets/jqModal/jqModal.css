@@ -1,40 +1,263 @@
 /* jqModal base Styling courtesy of;
 	Brice Burgess <bhb@iceburg.net> */
-
-/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+	/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
 	the Window's z-index value will be set to 3000 by default (in jqModal.js). You
 	can change this value by either;
 	  a) supplying one via CSS
 	  b) passing the "zIndex" parameter. E.g.  (window).jqm({zIndex: 500}); */
-	
 .jqmWindow {
-    display: none;
-    
-    position: fixed;
-    top: 17%;
-    left: 50%;
-    
-    margin-left: -300px;
-    width: 600px;
-    
-    background-color: #EEE;
-    color: #333;
-    border: 1px solid black;
-    padding: 12px;
+	display: none;
+	position: fixed;
+	top: 17%;
+	left: 50%;
+	margin-left: -230px;
+	width: 450px;
+	background-color: #EEE;
+	color: #333;
+	border: 3px solid black;
+	padding: 0px;
 }
 
-.jqmOverlay { background-color: #000; }
+.jqmOverlay {
+	background-color: #000;
+}
 
 /* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
-* iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
-	width: expression(this.parentNode.offsetWidth+'px');
-	height: expression(this.parentNode.offsetHeight+'px');
+* iframe.jqm {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: expression(this . parentNode . offsetWidth + 'px');
+	height: expression(this . parentNode . offsetHeight + 'px');
 }
 
 /* Fixed posistioning emulation for IE6
      Star selector used to hide definition from browsers other than IE6
      For valid CSS, use a conditional include instead */
 * html .jqmWindow {
-     position: absolute;
-     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+	position: absolute;
+	top: expression(( document . documentElement . scrollTop ||   document . body
+		. scrollTop) +   Math .
+		round(17 *   ( document . documentElement . offsetHeight ||   document .
+		body . clientHeight)/ 100 ) +   'px' );
+}
+
+/* Pageflakes wizard */
+body {
+	font-family:Tahoma,Arial,Helvetica;
+	font-size:8pt;
+	font-size-adjust:none;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:normal;
+	background-image:url('mini-acs-minis-1-1024x768.jpg');
+	background-repeat:no-repeat;
+}
+a {
+	color:Navy;
+	text-decoration:none;
+}
+.header {
+	background-color:#7274B0;
+}
+.header {
+	background:#32489A url(rageflakes.gif) no-repeat scroll 0%;
+	height:70px;
+}
+.StartWizardHeader_Step1 {
+	padding:15px;
+}
+.StartWizardHeader_Step1 div {
+	background:transparent url(1.gif) no-repeat scroll right center;
+	height:34px;
+	margin-right:20px;
+}
+div.wizard_box_close {
+	background: transparent url(cross.png) repeat scroll 0%;
+	cursor: pointer;
+	height: 14px;
+	left: 100%;
+	margin-left: -24px;
+	position: absolute;
+	top: 10px;
+	width: 14px;
+}
+.box {
+	margin:10px;
+	overflow:visible;
+	padding:10px;
+}
+.wizardBoxIntroHeader {
+	font-size:14pt;
+	text-align: center;
+	padding-bottom:15px;
+}
+.wizardBoxHeader {
+	font-size:14pt;
+	text-align: center;
+}
+.wizardboxButton {
+	background:#EEE url(StartWizardButtonBack.gif) repeat-x scroll 0%;
+	border:0px solid white;
+	cursor:pointer;
+	font-size:10pt;
+	font-weight:bold;
+	height:35px;
+	line-height:30px;
+	margin:4px 0pt 0pt 110px;
+	text-align:center;
+	width:165px;
+}
+.wizardboxFooter {
+	font-size:8pt;
+	background-color:#E2E2EE;
+	height:21px;
+	margin-top:31px;
+	padding:5px;
+	vertical-align:middle;
+}
+.StartWizardHeader_Step2 {
+	margin-right:20px;
+	padding:15px;
+}
+div.hr {
+	background-color:lightgrey;
+	height:1px;
+	margin-bottom:5px;
+	margin-top:5px;
+	overflow:hidden;
+}
+.startWizardBack {
+	color:#666666;
+	cursor:pointer;
+	float:left;
+	margin-top:20px;
+}
+.wizardboxButton_small {
+	background:white url(StartWizardButtonBack_small.gif) repeat-x scroll 0%;
+	border:0px solid white;
+	cursor:pointer;
+	font-size:10pt;
+	font-weight:bold;
+	height:35px;
+	line-height:30px;
+	margin:4px 0pt 0pt 110px;
+	text-align:center;
+	width:100px;
+}
+.StartWizardHeader_Step3 {
+	margin-right:20px;
+	padding:15px;
+}
+#StartWizard_MatchInput {
+	background:transparent url(location_box.png) no-repeat scroll 0%;
+	height:106px;
+	left:70px;
+	position:relative;
+}
+.Location_Box {
+	background-color:transparent;
+	border:0px none;
+	font-size:8pt;
+	height:20px;
+	vertical-align:top;
+	width:160px;
+	margin-top:20px
+}
+#StartWizard_Finish {
+	background:transparent url(StartWizardButtonBack_big.gif) no-repeat scroll 0px 1px;
+	height:35px;
+	margin-left:70px;
+	width:202px;
+	
+	font-size:10pt;
+	font-weight:bold;
+	line-height:34px;
+	margin:4px 0pt 0pt 110px;
+	text-align:center;
+}
+textarea, select, input {
+	font-family:Tahoma,Arial,Helvetica;
+	font-size:8pt;
+	font-size-adjust:none;
+	font-stretch:normal;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:normal;
+	padding:1px 3px;
+}
+
+/* Autocompleter 
+.autocompleter
+{
+	border: 1px solid #6FBEFF;
+	width: 250px;
+	background-color: #EFF8FF;
+}
+.autocompleter ul li
+{
+	padding: 2px 10px;
+	white-space: nowrap;
+	font-size: 11px;
+}
+.selectAutocompleter
+{
+	background-color: #d2fb8f;
+}
+#selectedCity
+{
+	border: 1px solid #eee;
+	width: 250px;
+	padding: 10px;
+	margin-left: 70px;
+}*/
+
+/* Login */
+.Start_Wizard_Back {
+	color:White;
+	float:right;
+	font-size:120%;
+	font-weight:bold;
+	margin:25px 20px 0pt 0pt;
+}
+.logo_box {
+	background:transparent url(123_logo_bg.gif) repeat scroll 0%;
+}
+.loginfield {
+	color:white;
+	float:left;
+	font-size:12px;
+	margin-bottom:1px;
+	width:320px;
+}
+input.textfield {
+	float:left;
+	margin:5px 0pt 5px 5px;
+	width:150px;
+}
+.nodisplay {
+	display:none;
+}
+input.button2 {
+	margin:10px 0pt 0pt 84px;
+	width:100px;
+}
+.box p {
+	font-size:12px;
+	margin:5px 0pt 0pt 1px;
+	padding:0pt;
+}
+p {
+	line-height:150%;
+	margin:0pt;
+	padding:5px 0px;
+}
+.box div label {
+	float:left;
+	font-size:12px;
+	padding-top:7px;
+	width:80px;
 }
