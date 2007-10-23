@@ -1,17 +1,23 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
 	<head>
 		<title>jqModalWizard</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<script type="text/javascript" src="${jquery}"></script>
 		<script type="text/javascript" src="${jqmodal}"></script>
+		<script type="text/javascript" src="${jqsuggest}"></script>
+		<script type="text/javascript" src="${jqdimensions}"></script>
+		<!-- <script type="text/javascript" src="${jsinterface}"></script> -->
 		<link rel="stylesheet" href="${jqmodalcss}" type="text/css" media="screen" />
+		<link rel="stylesheet" href="${jqsuggestcss}" type="text/css" media="screen" />
 	</head>
 	<body>
-		<h1>jqModalWizard</h1>
+		<h1>Portal Demo</h1>
 
 		<script>
 			$().ready(function() { 
 				$('#dialog').jqm({
 					modal:true,
+					trigger:'a.d1trigger',
 					onShow: function(h) {
 						h.w.fadeIn(888);
 					}}).jqmShow().jqmAddClose('a.d2trigger').jqmAddClose('a.login');
@@ -20,7 +26,11 @@
 					trigger:'a.d2trigger',
 					onShow: function(h) {
 						h.w.fadeIn(888);
-					}}).jqmAddClose('a.d3trigger');
+					},
+					onHide: function(h) {       					
+      					h.o.remove(); // remove overlay
+      					h.w.fadeOut(888); // hide window      
+    				}}).jqmAddClose('a.d3trigger').jqmAddClose('a.d1trigger');
 				$('#dialog3').jqm({
 					modal:false, 
 					trigger:'a.d3trigger',
@@ -36,62 +46,97 @@
 					trigger:'a.login',
 					onShow: function(h) {
 						h.w.fadeIn(888);
-					}});
+					}}).jqmAddClose('a.d1trigger');
+				
 			});
 		</script>
 
 		<div class="jqmWindow" id="dialog">
 
-			<a href="#" class="jqmClose">Zapri</a>
-			<hr />
-			<table width="200" border="0">
-				<tr>
-					<td></td>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-				</tr>
-				<tr>
-					<td colspan="4">Ali želite prilagoditi izgled Avto-Moto portala?</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td colspan="2">
-						<a href="#" class="d2trigger">PRILAGODI</a>
-					</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td><a href="#" class="jqmClose">Ne želim</a></td>
-					<td></td>
-					<td></td>
-					<td><a href="#" class="login">Prijava</a></td>
-				</tr>
-			</table>
+			<div class="header">
+				<div class="StartWizardHeader_Step1">
+					<div class="jqmClose wizard_box_close"></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="box">
+					<div class="wizardBoxIntroHeader">
+						Ali želite prilagoditi izgled Avto-Moto portala?
+					</div>
+					<!--  <table width="100%" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+								<td style="width: 198px;" class="wizardboxIntro1"></td>
+								<td valign="top" style="width: 200px;">
+									<div class="wizardboxIntro2">
+										Personalize your homepage with your favorite news,
+										weather, sports, entertainment, photos, videos, music,
+										email...and much more, all in one place!
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table> -->
+					<div class="wizardboxButton"><a href="#" class="d2trigger">Prilagodi zdaj!</a></div>
+					<div style="font-size: 8pt; color: Gray; text-align: center;">
+						Je hitro, zastonj in ne potrebujete računa.
+					</div>
+				</div>
+				<div class="wizardboxFooter">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td>
+									<strong>
+										<a href="#" class="jqmClose" style="font-size:8pt">
+											Ne želim
+										</a>
+									</strong>
+									<!-- <span style="visibility: hidden; margin-left: 20px;"
+										id="JustLetMeInProgress">
+										<img style="vertical-align: middle; padding-right: 5px;"
+											src="images/indicator.gif" />
+										Preparing your page...
+									</span> -->
+								</td>
+								<td></td>
+								<td align="right" style="font-size:8pt">
+									<strong>Ste že član?</strong>
+									<a href="#" class="login">
+										Prijava
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
 
 		<div class="jqmWindow" id="dialog2">
-			<a href="#" class="jqmClose">Zapri</a>
-			<hr />
-			<table width="200" border="0">
-				<tr>
-					<td></td>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-				</tr>
-				<tr>
-					<td colspan="4">
-						Katero znamko avtomobila vozite?
-						<br />
-						(portal bo prilagojen tej znamki)
-					</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td colspan="2">
-						<form name="form1" method="post" action="">
-							<label>
+
+				<div class="header">
+					<div class="jqmClose wizard_box_close"> </div>
+					<div align="right" class="StartWizardHeader_Step2">
+						<img border="0" usemap="#StartWizardMap2" src="/tapestry-examples/assets/jqModal/2.gif" />
+						<map id="StartWizardMap2" name="StartWizardMap2">
+							<area onclick="WW.step1()" href="javascript:void(0)" coords="6,5,30,28"
+								shape="rect" />
+						</map>
+					</div>
+				</div>
+				<div class="content">
+					<div class="box">
+						<div class="wizardBoxHeader">
+							Katero znamko avtomobila vozite?
+						</div>
+						<div style="font-size:9pt; text-align: center">
+							(portal bo prilagojen tej znamki)
+						</div>
+						<div style="text-align: center; margin-top:15px">
+							<form name="form1" method="post" action="">
+							
 								<select name="select">
 									<option>izberite</option>
 									<option>Alfa Romeo</option>
@@ -99,62 +144,198 @@
 									<option>Citroen</option>
 									<option>Fiat</option>
 									<option>Opel</option>
+									<option>Mini</option>
+									<option>Volkswagen</option>
 								</select>
-							</label>
+							
 						</form>
-					</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td><a href="#" class="jqmClose">Ne želim</a></td>
-					<td></td>
-					<td></td>
-					<td><a href="#" class="d3trigger">Naprej</a></td>
-				</tr>
-			</table>
+						</div>
+						<div class="hr"> </div>
+						<div class="startWizardBack"><a href="#" class="d1trigger">&lt; Nazaj</a></div>
+						<div style="margin-left: 155px; margin-top: 12px;"
+							class="wizardboxButton_small">
+							<a href="#" class="d3trigger">Naprej</a>
+						</div>
+					</div>
+				</div>			
 		</div>
 
 		<div class="jqmWindow" id="dialog3">
-			<a href="#" class="jqmClose">Zapri</a>
-			<hr />
-			<table width="200" border="0">
-				<tr>
-					<td></td>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-				</tr>
-				<tr>
-					<td colspan="4">Kje živite ?</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td colspan="2">
-						<form id="form2" name="form2" method="post" action="">
-							
-								<input type="text" name="textfield" />
-							
-						</form>
-					</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td><a href="#" class="jqmClose">Ne želim</a></td>
-					<td></td>
-					<td></td>
-					<td><a href="#" class="closeStep3">Končaj</a></td>
-				</tr>
-			</table>
+			<div class="header">
+				<div class="jqmClose wizard_box_close"> </div>
+				<div class="StartWizardHeader_Step3" align="right">
+					<img src="/tapestry-examples/assets/jqModal/3.gif" usemap="#StartWizardMap3"
+						border="0"/>
+						<map name="StartWizardMap3" id="StartWizardMap2">
+							<area shape="rect" coords="6,5,30,28" href="javascript:void(0)"
+								onclick="WW.step1()"/>
+								<area shape="rect" coords="40,5,70,28" href="javascript:void(0)"
+									onclick="WW.step2()"/>
+						</map>
+				</div>
+			</div>
+			<div class="content">
+				<div class="box">
+					<div class="wizardBoxHeader">
+						Kje živite?
+					</div>
+					<div style="font-size:9pt; text-align: center">
+						(portal bo prilagojen vašemu okolišu)
+					</div>
+					<div id="WW_step3_txtContainer"
+						style="overflow: visible; position: relative;">
+						<div id="StartWizard_MultipleMatch"></div>
+						<div id="StartWizard_MatchInput">
+							<div id="xxx" style="position: relative; top: 33px; left: 38px;">
+								
+									<!-- <input style="color: black;" class="Location_Box"
+										id="autocompleteMe" value="" tabindex="1001" type="text"/> -->
+									<input style="color: black;" class="Location_Box"
+										id="suggest" type="text"/>
+								
+							</div>
+							<div style="visibility: hidden;"
+								id="StartWizard_Location_Match_Select_Location">
+							</div>
+						</div>
+					</div>
+<!-- <div id="selectedCity">
+	<strong>Kraj: <span id="city"></span></strong><br />
+	<strong>Regija:</strong> <span id="district"></span><br />
+	<strong>Registriranih vozil vaše znamke:</strong> <span id="cars"></span><br />
+</div> -->
+					<div class="hr"> </div>
+					<div class="startWizardBack">&lt; Nazaj</div>
+					<!-- <input tabindex="1002" id="StartWizard_Finish"
+						class="wizardboxButton_small" value="Končaj - pojdi na mojo stran!" type="button"/> -->
+						
+					<div style="margin-left: 102px; margin-top: 12px;"
+							id="StartWizard_Finish">
+							<!-- <a href="#">Končaj - pojdi na mojo stran!</a> -->
+							<t:pagelink t:page="ui/portlets/JQueryBasic">Končaj - pojdi na mojo stran!</t:pagelink>
+						</div>	
+						
+				</div>
+			</div>
 		</div>
 
 		<div class="jqmWindow" id="login">
-			<a href="#" class="back">Nazaj</a>
-			<p>Prijavite se prosim</p>
-			<form id="form3" name="form3" method="post" action="">
-				<input type="text" name="email" />
-				<input type="password" name="password" />
-				<button>prijava</button>
-			</form>
+			<div class="header">
+				<a class="d1trigger Start_Wizard_Back" href="javascript:void(0)">Nazaj</a>
+			</div>
+			<div class="content">
+				<div class="box logo_box" style="height: 160px;">
+					<h1>Prijava</h1>
+					<p>Prosimo vtipkajte vaš elektronski naslov in geslo:</p>
+					<div>
+						<label>e-naslov:</label>
+						<div class="loginfield" id="StartWizard_Email">
+							<input onkeypress="if( event.keyCode == 13 ) WW.login();"
+								id="Start_Wizard_EmailField" class="textfield" type="text"/>
+								<div id="StartWizard_Email_Msg" class="nodisplay">
+									Incorrect user name or
+								</div>
+								<br/>
+						</div>
+						<br/>
+							<label>geslo:</label>
+							<div class="loginfield" id="StartWizard_Password">
+								<input onkeypress="if( event.keyCode == 13 ) WW.login();"
+									id="Start_Wizard_PasswordField" class="textfield" type="password"/>
+									<div class="nodisplay" id="StartWizard_Password_Msg">
+										Incorrect password
+									</div>
+									<br/>
+							</div>
+							<br/>
+								<label></label>
+								<label style="width: auto;">
+									<input checked="true" id="StartWizard_RememberMe"
+										type="checkbox"/>
+										Zapomni si me
+								</label>
+								<br/><br/>
+								<div>
+									<input class="button2" value="Prijava" onclick="WW.login()"
+										type="button"/>
+										<!-- <span id="LoginProgress"
+											style="visibility: hidden; margin-left: 20px;">
+											<img src="images/indicator.gif"
+												style="vertical-align: middle; padding-right: 5px;"/>
+												Authenticating...
+										</span> -->
+								</div>
+					</div>
+				</div>
+				<div class="box">
+					<h1>Ste izgubili geslo?</h1>
+					<p>Vpišite svoj elektronski naslov in prejeli boste izgubljeno geslo:</p>
+					<div>
+						<label>e-naslov:</label>
+						<div class="loginfield" id="StartWizard_GetPassword_Email">
+							<input id="StartWizard_GetPassword_Email_Field" class="textfield"
+								onkeypress="if( event.keyCode == 13 ) WW.getPassword();" type="text"/>
+								<div class="nodisplay" id="StartWizard_GetPass_Email_Msg">
+									Incorrect Email address
+									<br/>
+								</div>
+						</div>
+						<div id="StartWizard_GetPasswordMessage"></div>
+						<br/>
+							<div>
+								<input class="button2" value="Pošljite mi geslo"
+									onclick="WW.getPassword()" type="button"/>
+									<!-- <span id="GetPasswordProgress"
+										style="visibility: hidden; margin-left: 20px;">
+										<img src="images/indicator.gif"
+											style="vertical-align: middle; padding-right: 5px;"/>
+											Emailing password...
+									</span> -->
+							</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		
+		<script>			
+			$().ready(function() {
+				$("#suggest").suggest("${theLink}",{
+					onSelect: function() {
+						//alert("You selected: " + this.value)						
+					}
+				});
+			});
+		</script>		
+<!-- 		<script>
+			var cityCode = function(data) {
+				$('#city').html(data.value);
+				$('#district').html(data.district);
+				$('#cars').html(data.cars);
+			};
+			
+			var fadeInSuggestion = function(suggestionBox, suggestionIframe) 
+			{
+				$(suggestionBox).fadeTo(300,0.8);
+			};
+			var fadeOutSuggestion = function(suggestionBox, suggestionIframe) 
+			{
+				$(suggestionBox).fadeTo(300,0);
+			};
+			$().ready(function() { 		
+				$('#autocompleteMe').Autocomplete(
+					{
+						source: '${theLink}',
+						delay: 500,
+						autofill: true,
+						helperClass: 'autocompleter',
+						selectClass: 'selectAutocompleter',
+						minchars: 1,
+						onSelect : cityCode,
+						onShow : fadeInSuggestion,
+						onHide : fadeOutSuggestion
+					}
+				);				
+			});
+		</script> -->
 	</body>
 </html>
